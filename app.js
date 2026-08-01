@@ -444,7 +444,6 @@ function formatTime(sec) {
   return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
 }
 
-
 // TRACK END / TRANSPORT
 function handleTrackEnd() {
   if (trackList.length === 0) return;
