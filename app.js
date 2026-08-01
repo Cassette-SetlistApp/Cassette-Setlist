@@ -336,9 +336,9 @@ function renderTracklist() {
     tracklistEl.appendChild(empty);
     playPauseBtn.disabled = true;
     currentTrackIndex = -1;
-    currentTrackNameEl.textContent = 'No track loaded';
     return;
   }
+}
 
   trackList.forEach((track, index) => {
     const item = document.createElement('div');
