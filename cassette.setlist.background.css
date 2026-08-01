@@ -1,0 +1,21 @@
+#cassetteBackground {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: none;
+
+  transition: background-image 1.2s ease-in-out;
+}
+
+#cassetteBackground::before,
+#cassetteBackground::after {
+  content: none !important;
+  display: none !important;
+}
+
+

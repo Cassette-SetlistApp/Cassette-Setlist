@@ -1,0 +1,55 @@
+{
+  "values": {
+    "Gain": 0.3,
+    "Bass": 4.2,
+    "Presence": 5.1,
+    "Stereo Width": 7.9,
+    "Compressor Threshold": -33,
+    "Compressor Ratio": 2,
+
+    "Stereo Tone": 0.1,
+    "Stereo Clarity": 10,
+    "Saturation": 3.8,
+
+    "Subharmonic": 0.4,
+    "Clarity": 2.6,
+    "Tone": 6,
+
+    "Bass Boost": 4.4,
+    "Bass Clarity": 7.8,
+
+    "Drum Tone": 1.1,
+    "Drum Clarity": 4.1,
+
+    "Guitar Clarity": 8.6,
+    "Guitar Bass": 5.1,
+    "Guitar Tone": 10
+  },
+
+  "enabled": {
+    "Gain": true,
+    "Bass": true,
+    "Presence": true,
+    "Stereo Width": true,
+    "Compressor Threshold": true,
+    "Compressor Ratio": true,
+
+    "Stereo Tone": true,
+    "Stereo Clarity": true,
+    "Saturation": false,
+
+    "Subharmonic": false,
+    "Clarity": true,
+    "Tone": true,
+
+    "Bass Boost": true,
+    "Bass Clarity": true,
+
+    "Drum Tone": true,
+    "Drum Clarity": true,
+
+    "Guitar Clarity": true,
+    "Guitar Bass": true,
+    "Guitar Tone": true
+  }
+}

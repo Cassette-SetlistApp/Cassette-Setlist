@@ -1,0 +1,514 @@
+/* ============================================================
+   GLOBAL
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: transparent;
+  color: #e5e9f0;
+  overflow-y: scroll;
+
+  /* added for fixed footer */
+  padding-bottom: 120px;
+}
+
+/* ============================================================
+   APP
+   ============================================================ */
+
+.app {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  background: transparent;
+  border-radius: 14px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: #e5e9f0;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ============================================================
+   LOAD BUTTON
+   ============================================================ */
+
+.folder-select {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: rgba(10, 20, 30, 0.85);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #e5e9f0;
+  border: 1px solid #00eaff;
+  transition: 0.2s ease;
+}
+
+.folder-select:hover {
+  background: rgba(20, 40, 60, 0.95);
+  box-shadow: 0 0 14px rgba(0, 234, 255, 0.55);
+}
+
+.folder-select span {
+  pointer-events: none;
+}
+
+.folder-select input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgba(10, 20, 30, 0.85);
+  border: 1px solid #00eaff;
+  color: #e5e9f0;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  background: rgba(20, 40, 60, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(0, 234, 255, 0.55);
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+.btn.active {
+  background: #00eaff;
+  color: #000;
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.9);
+}
+
+.btn.active svg {
+  stroke: #000 !important;
+  fill: #000 !important;
+}
+
+/* ============================================================
+   MAIN GRID
+   ============================================================ */
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: transparent;
+}
+
+/* ============================================================
+   PLAYER SECTION
+   ============================================================ */
+
+.player-section {
+  background: transparent;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.current-track {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #00eaff;
+  text-shadow: 0 0 8px rgba(0, 234, 255, 0.6);
+}
+
+/* ============================================================
+   FOOTER PLAYBACK BAR (UPDATED)
+   ============================================================ */
+
+.footer-playback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+  margin-top: 10px;
+  border-top: 1px solid rgba(0, 234, 255, 0.25);
+}
+
+/* FIXED + TRANSPARENT FOOTER */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  /* transparent footer */
+  background: transparent !important;
+  backdrop-filter: none !important;
+
+  padding: 12px 20px;
+  border-top: 1px solid rgba(0, 234, 255, 0.25);
+  z-index: 999;
+}
+
+/* LEFT: TRANSPORT */
+.footer-transport {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.transport-btn {
+  background: rgba(10, 20, 30, 0.85);
+  border: 1px solid #0ff;
+  padding: 8px;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transport-btn svg {
+  stroke: #0ff;
+  fill: none;
+  stroke-width: 2;
+  width: 22px;
+  height: 22px;
+}
+
+.transport-btn:hover {
+  background: #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.transport-btn:hover svg {
+  stroke: #000;
+}
+
+/* PLAY BUTTON */
+.play-btn:hover {
+  background: #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.play-btn:hover svg {
+  stroke: #000;
+  fill: #000;
+}
+
+.play-btn.active {
+  background: #0ff;
+  box-shadow: 0 0 14px #0ff;
+}
+
+.play-btn.active svg {
+  stroke: #000;
+  fill: #000;
+}
+
+/* ============================================================
+   FOOTER PROGRESS BAR
+   ============================================================ */
+
+.footer-progress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background: #00eaff;
+  box-shadow: 0 0 10px #00eaff;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#seekSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: transparent !important;
+  border-radius: 4px;
+  box-shadow: inset 0 0 6px rgba(0, 234, 255, 0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#seekSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================
+   FOOTER TIME DISPLAY
+   ============================================================ */
+
+.footer-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(10, 20, 30, 0.65);
+  box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.25);
+  border: 1px solid rgba(0, 234, 255, 0.35);
+}
+
+.footer-time span {
+  font-size: 0.85rem;
+  color: #cbd2e3;
+}
+
+.footer-time .divider {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   TRACKLIST SECTION
+   ============================================================ */
+
+.tracklist-section {
+  background: transparent;
+  border-radius: 12px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.tracklist-section::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #00eaff, transparent);
+}
+
+/* ============================================================
+   TRACKLIST
+   ============================================================ */
+
+.tracklist {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 6px 0;
+  background: transparent;
+}
+
+/* ============================================================
+   TRACK ROWS
+   ============================================================ */
+
+.track-item {
+  padding: 10px 14px;
+  margin: 4px 10px;
+  border-radius: 6px;
+  background: rgba(12, 16, 24, 0.85);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.track-item:hover {
+  background: #0ff;
+  transform: translateX(2px);
+  color: #000;
+}
+
+.track-item.active {
+  background: #0ff;
+  box-shadow: 0 0 10px #0ff;
+  color: #000;
+}
+
+.track-name {
+  flex: 1;
+}
+
+.track-ext {
+  font-size: 0.75rem;
+  color: #9aa4b8;
+  margin-left: 8px;
+}
+
+/* ============================================================
+   SETTINGS PANEL
+   ============================================================ */
+
+.settings-panel {
+  margin-top: 20px;
+  background: transparent;
+  border-radius: 12px;
+  padding: 16px;
+  border: none;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  background: transparent;
+}
+
+.settings-header h2 {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9aa4b8;
+}
+
+/* ============================================================
+   DSP ROWS
+   ============================================================ */
+
+.setting-row {
+  display: grid;
+  grid-template-columns: 30px 160px 1fr 70px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  margin: 4px 0;
+  background: rgba(12, 16, 24, 0.85);
+  border-radius: 6px;
+}
+
+.setting-row input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #00eaff;
+  filter: drop-shadow(0 0 4px rgba(0, 234, 255, 0.6));
+}
+
+.setting-row input[type="checkbox"]:checked {
+  accent-color: #0ff;
+  filter: drop-shadow(0 0 6px #0ff);
+}
+
+.setting-label {
+  font-size: 0.85rem;
+  color: #cbd2e3;
+}
+
+.setting-value {
+  font-size: 0.8rem;
+  color: #9aa4b8;
+  text-align: right;
+}
+
+/* ============================================================
+   FUTURISTIC SLIDERS
+   ============================================================ */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 255, 255, 0.15);
+  border-radius: 2px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.25);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00eaff;
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.9);
+  cursor: pointer;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+.tracklist::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tracklist::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tracklist::-webkit-scrollbar-thumb {
+  background: #0ff;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* ============================================================
+   SETTINGS PANEL HIDDEN
+   ============================================================ */
+
+.settings-panel.hidden {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+}
