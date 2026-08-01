@@ -23,7 +23,6 @@ const nextBtn = document.getElementById('nextBtn');
 const repeatBtn = document.getElementById('repeatBtn');
 const shuffleBtn = document.getElementById('shuffleBtn');
 
-
 // core sliders
 const gainSlider = document.getElementById('gainSlider');
 const gainValue = document.getElementById('gainValue');
