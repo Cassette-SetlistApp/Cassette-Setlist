@@ -350,7 +350,7 @@ body {
    ============================================================ */
 
 .tracklist {
-  max-height: 360px;
+  max-height: 450px; 
   overflow-y: auto;
   padding: 6px 0;
   background: transparent;
