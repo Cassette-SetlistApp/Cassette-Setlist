@@ -1,11 +1,10 @@
 // ============================================================
-// dsp.settings.js — FULL VERSION (visual sync with overlay CSS)
+// dsp.settings.js
 // ============================================================
 
-// Remember last selected preset circle
 let dspLastSelectedPreset = null;
 
-// EFFECT KEYS (must match your sliders / checkboxes)
+// EFFECT KEYS
 const DSP_EFFECT_KEYS = [
   "Gain", "Bass", "Presence", "Stereo Width",
   "Compressor Threshold", "Compressor Ratio",
@@ -16,8 +15,7 @@ const DSP_EFFECT_KEYS = [
   "Guitar Clarity", "Guitar Bass", "Guitar Tone"
 ];
 
-
-// Slider → DOM ID
+// Slider
 const DSP_SLIDER_MAP = {
   "Gain": "gainSlider",
   "Bass": "bassSlider",
@@ -40,7 +38,7 @@ const DSP_SLIDER_MAP = {
   "Guitar Tone": "guitarToneSlider"
 };
 
-// Checkbox → DOM ID
+// Checkbox
 const DSP_CHECKBOX_MAP = {
   "Gain": "gainCheck",
   "Bass": "bassCheck",
@@ -63,8 +61,6 @@ const DSP_CHECKBOX_MAP = {
   "Guitar Tone": "guitarToneCheck"
 };
 
-
-
 // File paths
 const DSP_DEFAULT_FILE = "DSP Settings/dsp.settings.json";
 const DSP_REGISTRY_FILE = "DSP Settings/dsp.json";
@@ -80,7 +76,7 @@ function dspGetCheckbox(key) {
 }
 
 // ============================================================
-// Collect current DSP settings → JSON
+// DSP settings → JSON
 // ============================================================
 function dspCollectCurrentSettings() {
   const settings = { values: {}, enabled: {} };
@@ -187,7 +183,7 @@ async function dspLoadPresetFile(filePath) {
 }
 
 // ============================================================
-// OVERLAY UI (center modal)
+// OVERLAY UI
 // ============================================================
 function dspShowOverlay(presets) {
   const old = document.getElementById("dspOverlay");
@@ -271,7 +267,7 @@ function dspShowOverlay(presets) {
 }
 
 // ============================================================
-// Update overlay bars to reflect current DSP values
+// Update overlay bars
 // ============================================================
 function dspUpdateOverlayBars(panel) {
   const settings = dspCollectCurrentSettings();
@@ -293,7 +289,6 @@ function dspUpdateOverlayBars(panel) {
     fill.style.boxShadow = `0 0 12px hsl(${hue}, 100%, 60%)`;
   });
 }
-
 
 // ============================================================
 // INIT
