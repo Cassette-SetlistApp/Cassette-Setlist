@@ -338,7 +338,6 @@ function renderTracklist() {
     currentTrackIndex = -1;
     return;
   }
-}
 
   trackList.forEach((track, index) => {
     const item = document.createElement('div');
