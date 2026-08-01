@@ -49,166 +49,170 @@
 
     </main>
 
-    <!-- DSP PANEL -->
-    <div id="settingsPanel" class="settings-panel transparent-settings hidden">
+  </div> <!-- END OF .app -->
 
-      <div class="settings-header">
-        <h2>DSP Settings</h2>
 
-        <div class="settings-header-buttons">
-          <button id="dspDownloadBtn" class="btn small">Download Settings</button>
-          <button id="dspLoadBtn" class="btn small">Load Settings</button>
-          <button id="closeSettingsBtn" class="btn small">X</button>
-        </div>
-      </div>
+  <div id="settingsPanel" class="settings-panel hidden">
 
-      <div class="settings-body">
+  <div class="transparent-settings">
 
-        <div id="dspPresetGallery" class="dsp-preset-gallery"></div>
 
-        <!-- DSP EFFECT ROWS -->
+  <div id="closeSettingsBtn" class="settings-close">X</div>
 
-        <div class="setting-row">
-          <input type="checkbox" id="gainCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Gain</span>
-          <input id="gainSlider" type="range" min="0" max="10" step="0.01" value="1">
-          <span id="gainValue" class="setting-value">1.00</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="bassCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Bass</span>
-          <input id="bassSlider" type="range" min="0" max="10" step="0.1" value="3">
-          <span id="bassValue" class="setting-value">3.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="presenceCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Presence</span>
-          <input id="presenceSlider" type="range" min="0" max="10" step="0.1" value="4">
-          <span id="presenceValue" class="setting-value">4.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="widthCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Stereo Width</span>
-          <input id="widthSlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="widthValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="compThreshCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Compressor Threshold</span>
-          <input id="compThresholdSlider" type="range" min="-60" max="0" step="1" value="-18">
-          <span id="compThresholdValue" class="setting-value">-18 dB</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="compRatioCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Compressor Ratio</span>
-          <input id="compRatioSlider" type="range" min="1" max="10" step="0.5" value="3">
-          <span id="compRatioValue" class="setting-value">3:1</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="stereoToneCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Stereo Tone</span>
-          <input id="stereoToneSlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="stereoToneValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="stereoClarityCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Stereo Clarity</span>
-          <input id="stereoClaritySlider" type="range" min="0" max="10" step="0.1" value="4">
-          <span id="stereoClarityValue" class="setting-value">4.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="saturationCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Saturation</span>
-          <input id="saturationSlider" type="range" min="0" max="10" step="0.1" value="3">
-          <span id="saturationValue" class="setting-value">3.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="subharmonicCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Subharmonic</span>
-          <input id="subharmonicSlider" type="range" min="0" max="10" step="0.1" value="4">
-          <span id="subharmonicValue" class="setting-value">4.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="clarityCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Clarity</span>
-          <input id="claritySlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="clarityValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="toneCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Tone</span>
-          <input id="toneSlider" type="range" min="0" max="10" step="0.1" value="3">
-          <span id="toneValue" class="setting-value">3.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="bassBoostCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Bass Boost</span>
-          <input id="bassBoostSlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="bassBoostValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="bassClarityCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Bass Clarity</span>
-          <input id="bassClaritySlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="bassClarityValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="drumToneCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Drum Tone</span>
-          <input id="drumToneSlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="drumToneValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="drumClarityCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Drum Clarity</span>
-          <input id="drumClaritySlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="drumClarityValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="guitarClarityCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Guitar Clarity</span>
-          <input id="guitarClaritySlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="guitarClarityValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="guitarBassCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Guitar Bass</span>
-          <input id="guitarBassSlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="guitarBassValue" class="setting-value">5.0</span>
-        </div>
-
-        <div class="setting-row">
-          <input type="checkbox" id="guitarToneCheck" class="effect-checkbox" checked>
-          <span class="setting-label">Guitar Tone</span>
-          <input id="guitarToneSlider" type="range" min="0" max="10" step="0.1" value="5">
-          <span id="guitarToneValue" class="setting-value">5.0</span>
-        </div>
+    <div class="settings-header">
+      <h2>DSP Settings</h2>
+      <div class="settings-header-buttons">
+        <button id="dspDownloadBtn" class="btn small">Download Settings</button>
+        <button id="dspLoadBtn" class="btn small">Load Settings</button>
+      
 
       </div>
     </div>
 
+      <div id="dspPresetGallery" class="dsp-preset-gallery"></div>
+
+      <!-- DSP EFFECT ROWS -->
+      <div class="setting-row">
+        <input type="checkbox" id="gainCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Gain</span>
+        <input id="gainSlider" type="range" min="0" max="10" step="0.01" value="1">
+        <span id="gainValue" class="setting-value">1.00</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="bassCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Bass</span>
+        <input id="bassSlider" type="range" min="0" max="10" step="0.1" value="3">
+        <span id="bassValue" class="setting-value">3.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="presenceCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Presence</span>
+        <input id="presenceSlider" type="range" min="0" max="10" step="0.1" value="4">
+        <span id="presenceValue" class="setting-value">4.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="widthCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Stereo Width</span>
+        <input id="widthSlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="widthValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="compThreshCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Compressor Threshold</span>
+        <input id="compThresholdSlider" type="range" min="-60" max="0" step="1" value="-18">
+        <span id="compThresholdValue" class="setting-value">-18 dB</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="compRatioCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Compressor Ratio</span>
+        <input id="compRatioSlider" type="range" min="1" max="10" step="0.5" value="3">
+        <span id="compRatioValue" class="setting-value">3:1</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="stereoToneCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Stereo Tone</span>
+        <input id="stereoToneSlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="stereoToneValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="stereoClarityCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Stereo Clarity</span>
+        <input id="stereoClaritySlider" type="range" min="0" max="10" step="0.1" value="4">
+        <span id="stereoClarityValue" class="setting-value">4.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="saturationCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Saturation</span>
+        <input id="saturationSlider" type="range" min="0" max="10" step="0.1" value="3">
+        <span id="saturationValue" class="setting-value">3.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="subharmonicCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Subharmonic</span>
+        <input id="subharmonicSlider" type="range" min="0" max="10" step="0.1" value="4">
+        <span id="subharmonicValue" class="setting-value">4.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="clarityCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Clarity</span>
+        <input id="claritySlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="clarityValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="toneCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Tone</span>
+        <input id="toneSlider" type="range" min="0" max="10" step="0.1" value="3">
+        <span id="toneValue" class="setting-value">3.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="bassBoostCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Bass Boost</span>
+        <input id="bassBoostSlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="bassBoostValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="bassClarityCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Bass Clarity</span>
+        <input id="bassClaritySlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="bassClarityValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="drumToneCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Drum Tone</span>
+        <input id="drumToneSlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="drumToneValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="drumClarityCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Drum Clarity</span>
+        <input id="drumClaritySlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="drumClarityValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="guitarClarityCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Guitar Clarity</span>
+        <input id="guitarClaritySlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="guitarClarityValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="guitarBassCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Guitar Bass</span>
+        <input id="guitarBassSlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="guitarBassValue" class="setting-value">5.0</span>
+      </div>
+
+      <div class="setting-row">
+        <input type="checkbox" id="guitarToneCheck" class="effect-checkbox" checked>
+        <span class="setting-label">Guitar Tone</span>
+        <input id="guitarToneSlider" type="range" min="0" max="10" step="0.1" value="5">
+        <span id="guitarToneValue" class="setting-value">5.0</span>
+      </div>
+
+    </div>
   </div>
 
+
+  <!-- FOOTER PLAYBACK -->
   <div class="footer-playback fixed-footer">
 
-    <!-- TRANSPORT (REAL IDs) -->
+    <!-- TRANSPORT -->
     <div class="footer-transport">
 
       <button id="prevBtn" class="btn small transport-btn transport-prev">
@@ -255,7 +259,7 @@
 
     </div>
 
-    <!-- PROGRESS BAR (REAL IDs) -->
+    <!-- PROGRESS BAR -->
     <div class="footer-progress">
       <div class="progress-container">
         <div class="progress-fill" id="progress-fill"></div>
@@ -263,7 +267,7 @@
       </div>
     </div>
 
-    <!-- TIME (REAL IDs) -->
+    <!-- TIME -->
     <div class="footer-time time-display">
       <span id="currentTime">00:00</span>
       <span class="divider">/</span>

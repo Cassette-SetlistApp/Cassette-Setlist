@@ -383,7 +383,6 @@ seekSlider.addEventListener("input", (e) => {
   }
 });
 
-
 function loadTrack(index) {
   if (!audioContext || !audioElement) initAudio();
   if (index < 0 || index >= trackList.length) return;
@@ -673,14 +672,17 @@ document.querySelectorAll('.effect-checkbox').forEach(cb => {
   });
 });
 
-// SETTINGS PANEL
 settingsBtn.addEventListener('click', () => {
   settingsPanel.classList.remove('hidden');
+  settingsPanel.classList.add('show');
 });
 
 closeSettingsBtn.addEventListener('click', () => {
+  settingsPanel.classList.remove('show');
   settingsPanel.classList.add('hidden');
 });
+
+
 
 // SLIDER HANDLERS
 gainSlider.addEventListener('input', () => {
