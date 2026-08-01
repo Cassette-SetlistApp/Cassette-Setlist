@@ -307,6 +307,9 @@ function map0to10Linear(v, min, max) {
 // FOLDER / TRACKLIST
 folderInput.addEventListener('change', (e) => {
   const files = Array.from(e.target.files || []);
+
+  if (files.length === 0) return;
+
   trackList = [];
 
   files.forEach((file) => {
@@ -328,6 +331,10 @@ folderInput.addEventListener('change', (e) => {
 
 function renderTracklist() {
   tracklistEl.innerHTML = '';
+
+  if (trackList.length === 0 && currentTrackIndex !== -1) {
+    return;
+  }
 
   if (trackList.length === 0) {
     const empty = document.createElement('div');
